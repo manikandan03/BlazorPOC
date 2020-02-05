@@ -1,0 +1,97 @@
+﻿@layout MasterLayout
+@page "/Conference/Live"
+@page "/Live"
+@inherits Blaze.ComponentBaseClass.LiveComponentBase
+@inject NavigationManager NavigationManager
+
+<style>
+    h1, h3 {
+        color: white;
+    }
+
+    .col-centered {
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="conferenceroom-status">
+                <div class="col-md-12 conf-statuswrap">
+                    <div class="text-center">
+
+                        @if (ConferenceRoomModel.CurrentConference != null)
+                        {
+                            <h1>
+                                Welcome @ConferenceRoomModel.CurrentConference.BookedBy
+                            </h1>
+                            <h3>@ConferenceRoomModel.CurrentConference.Description</h3>
+                            <h4>@ConferenceRoomModel.CurrentConference.BookForm.ToString("hh:mm tt") - @ConferenceRoomModel.CurrentConference.BookTo.ToString("hh:mm tt")</h4>
+                            <button style="display:@yesImInDivShow" class="btn btn-primary" @onclick="@(e => IsBooked(@ConferenceRoomModel.CurrentConference.IsBooked))">
+                                @IsBookedButtonText
+                            </button>
+                            <h4>@SuccessfullMsg</h4>
+
+                            <div class="text-center">
+                                <div class="input-group col-md-4 col-centered" style="display:@empIdDivShow">
+                                    @*<div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control " placeholder="Enter EmployeeId" type="text" @bind-value=employeeId /><br />
+                                        <button class="btn btn-primary" @onclick="CheckValidEmpId">
+                                            Verify
+                                        </button>*@
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control " placeholder="Enter EmployeeId" type="text" @bind-value=employeeId />
+                                        @*<div class="row col-6 text-danger">
+                                                <strong>@confirmationText</strong>
+                                            </div>*@
+                                    </div>
+
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-key" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control"  placeholder="Enter Password" type="password" @bind-value=password />
+                                        @*<div class="row col-6 text-danger">
+                                                &nbsp;<strong><ValidationMessage For="@(()=>userModel.Password)" /></strong>
+                                            </div>*@
+                                    </div>
+
+                                    <div class=" input-group mb-4">
+                                        <div class="col-md-4 pl-0">
+                                            <button class="btn btn-success px-4" @onclick="CheckValidEmpId">Verify</button>
+                                        </div>
+                                        <div class=" col-md-6 text-danger">
+                                            <strong>@confirmationText</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <h1>
+                                Welcome
+                            </h1>
+                            <h3>No Bookings Available.</h3>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@inherits Blaze.ComponentBaseClass.ConferenceBannerComponentBase
+
+<div class="carousel-item @active">
+    <div class="carouselitem-inner">
+        <h2>Chorus-Conference Room</h2>
+        <h3>@floor</h3>
+
+        @if (conferenceRoomModel.CurrentConference == null)
+        {
+            <div class="row" style="align-items: center;margin-top: 20px;margin-bottom: 20px;">
+                <div class="col-md-8"><h1>Vacant</h1></div>
+                <div class="col-md-4"><img src="images/availableIcon.png" alt="status" class="img-fluid	" /></div>
+            </div>
+        }
+        else
+        {
+            <div class="row" style="align-items: center;margin-top: 20px;margin-bottom: 20px;">
+                <div class="col-md-8"><h1>Busy</h1></div>
+                <div class="col-md-4"><img src="images/occupiedIcon.png" alt="status" class="img-fluid	" /></div>
+            </div>
+        }
+    </div>
+    <div class="currentmeet-duration">
+        @if (conferenceRoomModel.CurrentConference == null)
+        {
+            <label class="bookedby-title">@vacantTimeSpan</label>
+        }
+        else
+        {
+            <label class="bookedby-title">Booked by: <span>@conferenceRoomModel.CurrentConference.BookedBy</span></label>
+            <label class="bookedby-title">Project Name: <span>@conferenceRoomModel.CurrentConference.ProjectName</span></label>
+            <label class="bookedby-title">Description: <span>@conferenceRoomModel.CurrentConference.Description</span></label>
+            <label class="bookedby-title">
+                Between: <span>@conferenceRoomModel.CurrentConference.Time</span>
+            </label>
+        }
+
+    </div>
+</div>
+
+

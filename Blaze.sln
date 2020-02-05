@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blaze", "Blaze\Blaze.csproj", "{56232FD1-C354-43CC-86F6-74B04EB2A401}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazeAPI", "BlazeAPI\BlazeAPI.csproj", "{DF70EABF-BAA9-4048-B7E5-E845EA0C63F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazeShared", "BlazeShared\BlazeShared.csproj", "{32B9087B-B5E1-4012-A853-66842CD3B531}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56232FD1-C354-43CC-86F6-74B04EB2A401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56232FD1-C354-43CC-86F6-74B04EB2A401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56232FD1-C354-43CC-86F6-74B04EB2A401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56232FD1-C354-43CC-86F6-74B04EB2A401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF70EABF-BAA9-4048-B7E5-E845EA0C63F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF70EABF-BAA9-4048-B7E5-E845EA0C63F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF70EABF-BAA9-4048-B7E5-E845EA0C63F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF70EABF-BAA9-4048-B7E5-E845EA0C63F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B9087B-B5E1-4012-A853-66842CD3B531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B9087B-B5E1-4012-A853-66842CD3B531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B9087B-B5E1-4012-A853-66842CD3B531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B9087B-B5E1-4012-A853-66842CD3B531}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82786E7B-62EE-45A9-8039-74C5582AE718}
+	EndGlobalSection
+EndGlobal

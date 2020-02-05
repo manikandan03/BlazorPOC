@@ -1,0 +1,53 @@
+﻿@layout LoginLayout
+@page "/account/login"
+@inherits Blaze.ComponentBaseClass.LoginComponentBase
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card-group">
+                <div class="card p-5" style="background-color: rgba(175, 172, 172, 0.4);">
+                    <EditForm Model="@userModel" OnValidSubmit="@HandleValidSubmit">
+                        <DataAnnotationsValidator />
+                        <div class="card-body">
+                            <div class="text-center">
+                                <a class="navbar-brand" href="#"><img src="images/DSRCLogo.png" alt="dsrc ogo" /></a>
+                            </div>
+                            <br />
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-user"></i>
+                                    </span>
+                                </div>
+                                <InputText class="form-control" type="text" placeholder="Username" @bind-Value="userModel.UserName" />
+                                <div class="row col-6 text-danger">
+                                    &nbsp;<strong><ValidationMessage For="@(()=>userModel.UserName)" /></strong>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-lock"></i>
+                                    </span>
+                                </div>
+                                <InputText class="form-control" type="password" placeholder="Password" @bind-Value="userModel.Password" />
+                                <div class="row col-6 text-danger">
+                                    &nbsp;<strong><ValidationMessage For="@(()=>userModel.Password)" /></strong>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-success px-4" type="submit">Login</button>
+                                    <button class="btn btn-link px-0" type="button"><strong class="text-primary">Forgot password?</strong></button>
+                                </div>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

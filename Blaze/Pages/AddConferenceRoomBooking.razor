@@ -1,0 +1,218 @@
+﻿@layout MasterLayout
+@page "/addConferenceBooking"
+@page "/addConferenceBooking/{ConferenceId}"
+@inherits Blaze.ComponentBaseClass.AddConferenceRoomBookingComponentBase
+@inject NavigationManager NavigationManager
+
+<style>
+    label {
+        font-weight: bold
+    }
+</style>
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="conferenceroom-status">
+                <div class="col-md-12 conf-statuswrap">
+                    @if (!Saved)
+                    {
+                        <EditForm Model="@ConferenceRoomBooking" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+                            <DataAnnotationsValidator />
+                            @*<ValidationSummary />*@
+                            <div class="formcenter">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">
+                                        <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                        Add New Booking
+                                    </h4>
+                                </div>
+                                <div style="padding: 14px">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="BookingDate" class="control-label">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                    Employee Id
+                                                </label>
+                                                <InputText type="number" @bind-Value="ConferenceRoomBooking.EmployeeId" placeholder="Enter EmployeeId" class="form-control" />
+                                                <div class="row error text-danger">
+                                                    &nbsp;<strong><ValidationMessage For="@(() => ConferenceRoomBooking.EmployeeId)" /></strong>
+                                                    <span>@empIdValidationError</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="purpose" class="control-label">
+                                                    <i class="fa fa-adjust" aria-hidden="true"></i>
+                                                    Purpose
+                                                </label>
+                                                <InputSelect id="classification" class="form-control" @bind-Value="ConferenceRoomBooking.PurposeID">
+                                                    <option value="">Select Purpose</option>
+                                                    @foreach (var item in BookingPurpose)
+                                                        {
+                                                        <option value="@item.PurposeID">@item.PurposeName</option>
+                                                        }
+                                                </InputSelect>
+                                                <div class="row error text-danger">
+                                                    &nbsp;<strong><ValidationMessage For="@(() => ConferenceRoomBooking.PurposeID)" /></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="Department">
+                                                    <i class="fa fa-building" aria-hidden="true"></i>
+                                                    Department
+                                                </label>
+                                                <select class="ddlDepartment form-control"
+                                                        multiple="multiple" onchange="GetSelectedDepartments()">
+                                                    @foreach (var item in Departments)
+                                                    {
+                                                        <option value="@item.DepartmentID">@item.DepartmentName</option>
+                                                    }
+                                                </select>
+                                                <div class="row error text-danger">
+                                                    &nbsp;<strong><ValidationMessage For="@(() => ConferenceRoomBooking.DepartmentId)" /></strong>
+                                                    <strong>@deptIdValidationError</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="purpose" class="control-label">
+                                                    <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                                    Schedule  Meeting / Training Name
+                                                </label>
+                                                <InputTextArea id="description" placeholder="Enter Meeting / Training Name" class="form-control" @bind-Value="ConferenceRoomBooking.Description">
+
+                                                </InputTextArea>
+                                                <div class="row error text-danger">
+                                                    &nbsp;<strong><ValidationMessage For="@(() => ConferenceRoomBooking.Description)" /></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="BookingDate" class="control-label">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    Booking Date
+                                                </label>
+                                                <InputDate @bind-Value="ConferenceRoomBooking.BookedDate" class="form-control"></InputDate>
+                                                <div class="row error text-danger">
+                                                    &nbsp;<strong><ValidationMessage For="@(() => ConferenceRoomBooking.BookedDate)" /></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group" id="divStartTime">
+                                                <label for="StartTime" class="control-label">
+                                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                    Start Time
+                                                </label>
+                                                <br />
+                                                <input id="startTime" onchange="GetStartTime()" class="form-control timepicker" />
+                                                @*<input type="time" id="startTime" class="form-control" @bind-value="ConferenceRoomBooking.StartTime">*@
+                                                @*<div class="row error text-danger">
+                                                        <span>@starttimeValidationError</span>
+                                                    </div>*@
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="EndTime" class="control-label">
+                                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                    End Time
+                                                </label>
+                                                <br />
+                                                <input id="endTime" onchange="GetEndTime()" class="form-control timepicker">
+                                                @*<input type="time" id="startTime" class="form-control" @bind-value="ConferenceRoomBooking.EndTime">*@
+                                                <div class="row error text-danger">
+                                                    <strong>@endtimeValidationError</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="ProjectName" class="control-label">
+                                                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                                                    ProjectName
+                                                </label>
+
+                                                <InputSelect id="classification" class="form-control" @bind-Value="ConferenceRoomBooking.ProjectId" @onchange="@OnProjectSelected">
+                                                    <option value="">Select Project</option>
+                                                    @foreach (var item in Projects)
+                                                        {
+                                                        <option value="@item.ProjectID">@item.ProjectName</option>
+                                                        }
+                                                </InputSelect>
+                                                <div class="row  error text-danger">
+                                                    &nbsp;<strong><ValidationMessage For="@(() => ConferenceRoomBooking.ProjectId)" /></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="EndTime" class="control-label">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                    Select Attendees
+                                                </label>
+                                                
+                                                <select class="ddlAttendees form-control"
+                                                        multiple="multiple" onchange="GetSelectedAttendees()">
+                                                    @foreach (var item in Users)
+                                                    {
+                                                        <option value="@item.UserId">@item.UserName</option>
+                                                    }
+                                                </select>
+                                                <div class="row error text-danger">
+                                                    &nbsp;<strong>
+                                                    @*<ValidationMessage For="@(() => ConferenceRoomBooking.EmpID)" />*@
+                                                    @attendeesValidationError
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-dribbble" @onclick="@GoBackToTablePage">
+                                            Back
+                                            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="submit" id="btnAdd" class="btn btn-info">
+                                            Save
+                                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </EditForm>
+                    }
+                    else
+                    {
+                        <div class="alert  @StatusClass" style="font-weight:bold">@Message</div>
+                        <a class="btn btn-dribbble" @onclick="@GoBackToTablePage">
+                            Back
+                            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                        </a>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

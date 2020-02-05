@@ -1,0 +1,61 @@
+﻿@layout MasterLayout
+@page "/timetable"
+@inherits Blaze.ComponentBaseClass.TimeTableComponentBase
+@inject NavigationManager NavigationManager
+<style>
+    th {
+        background-color: white;
+    }
+
+    td {
+        color: white;
+    }
+</style>
+
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="conferenceroom-status">
+                <div class="col-md-12 conf-statuswrap">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input id="datepicker" class="form-control" type="date" @bind-value="@DatePickerValue">
+                            </div>
+                        </div>
+                        <div class="col-md-4 p-0">
+                            <div class="form-group">
+                                <button class="btn btn-primary mr-2" @onclick="SearchConfernce">
+                                    Search
+                                    <i class="fa fa-search " aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-dribbble px-4" @onclick="@NavigateNewBookingComponent">
+                                    New Booking
+                                    <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                    <span class="caret"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if (conferenceRoomModelByDate.Count > 0)
+                    {
+                        <div class="row">
+                            @foreach (var item in conferenceRoomModelByDate)
+                            {
+                                <BookingTile conferenceDetail="item"></BookingTile>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="text-align:center ;background-color:white">
+                            <h3>No more meetings available for today's</h3>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

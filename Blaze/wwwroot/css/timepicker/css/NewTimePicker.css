@@ -1,0 +1,30 @@
+﻿.tp {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #ebebeb;
+	padding: 0px 15px;
+    width:250px;
+	font-family: Calibri, Tahoma, Veradana !important;
+	background-color: #FFF;
+	color:gray;
+}
+.tp input {
+	font: inherit;
+	border: 0; margin: 0;
+	outline: none;
+	text-align: center;
+	background-color: #FFF;
+	color: inherit;
+    width:75px;
+    font-size:medium;
+}
+.tp_spinners {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -4px;
+    padding:12px;
+}
+.tp_spinners span { border: 5px solid transparent; cursor: pointer; display: block; }
+.tp_spinners .tp_spinup { border-bottom-color: black; border-top: 0; margin-bottom: 4px; }
+.tp_spinners .tp_spindown { border-top-color: black; border-bottom: 0; }

@@ -1,0 +1,46 @@
+﻿@inherits Blaze.ComponentBaseClass.BookingTileComponentBase
+
+<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" style="margin-bottom: 1rem;">
+    <div class="project_list">
+        <div class="project_header">
+
+            @if ((item.BookedDate == DateTime.Now.Date && item.BookForm.TimeOfDay <= DateTime.Now.TimeOfDay &&
+                                                 item.BookTo.TimeOfDay >= DateTime.Now.TimeOfDay) && item.IsBooked == 1)
+            {
+                <img src="images/yellow.png" />
+            }
+            else if ((item.BookedDate == DateTime.Now.Date && item.BookForm.TimeOfDay <= DateTime.Now.TimeOfDay && item.BookTo.TimeOfDay >= DateTime.Now.TimeOfDay))
+            {
+                <img src="images/active.png" />
+            }
+            <div>@item.BookedBy</div>
+
+            <div class="project_header_icon">
+
+                @*<div style="padding-right: 7px;" >
+                <a href="@($"addConferenceBooking/{@item.ConferenceID}")">
+                    <i class="fa fa-pencil-square-o"></i>
+                </a>
+            </div>
+            <div>
+                <i class="fa fa-trash"></i>
+            </div>*@
+            </div>
+        </div>
+        <div class="project_card_body">
+            @if (@item.PurposeId == 1)
+            {
+                <strong>Meeting</strong>
+            }
+            else
+            {
+                <strong>Training</strong>
+            }
+            <div>Description : <span style="color: rgb(130, 132, 135);">@item.Description </span> </div>
+            <div>Date : <span style="color: rgb(130, 132, 135);">@item.BookedDate.ToString("dd/MMM/yyyy") </span> </div>
+            <div>Time : <span style="color: rgb(130, 132, 135);">@item.Time </span></div>
+            <div>Duration : <span style="color: rgb(130, 132, 135);"> @item.Duration </span> </div>
+
+        </div>
+    </div>
+</div>

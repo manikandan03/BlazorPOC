@@ -1,0 +1,32 @@
+D:\Client Projects\Blazer\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.deps.json
+D:\Client Projects\Blazer\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.dll
+D:\Client Projects\Blazer\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.pdb
+D:\Client Projects\Blazer\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfoInputs.cache
+D:\Client Projects\Blazer\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfo.cs
+D:\Client Projects\Blazer\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.dll
+D:\Client Projects\Blazer\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.pdb
+D:\Client Projects\Blazer\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.csprojAssemblyReference.cache
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.deps.json
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.dll
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.pdb
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfoInputs.cache
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfo.cs
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.dll
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.pdb
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.deps.json
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.dll
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.pdb
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfoInputs.cache
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfo.cs
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.dll
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.pdb
+D:\Client Projects\New BlazorApp\Backup\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.csprojAssemblyReference.cache
+D:\Client Projects\New BlazorApp\conference_room_blaze\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.csprojAssemblyReference.cache
+D:\BlazorDemo\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.deps.json
+D:\BlazorDemo\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.dll
+D:\BlazorDemo\Blaze\BlazeShared\bin\Debug\netstandard2.0\BlazeShared.pdb
+D:\BlazorDemo\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.csprojAssemblyReference.cache
+D:\BlazorDemo\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfoInputs.cache
+D:\BlazorDemo\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.AssemblyInfo.cs
+D:\BlazorDemo\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.dll
+D:\BlazorDemo\Blaze\BlazeShared\obj\Debug\netstandard2.0\BlazeShared.pdb
